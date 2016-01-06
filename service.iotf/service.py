@@ -12,16 +12,15 @@ if cmd_subfolder not in sys.path:
 		
 import ibmiotf.device
 
-POLL_INTERVAL = 10000
-
 def commandProcessor(cmd):
-	global POLL_INTERVAL
+	global pollInterval
 	print("Command received: %s" % cmd.data)
 	if cmd.command == "setInterval":
 		if 'interval' not in cmd.data:
 			print("Error - command is missing required information: 'interval'")
 		else:
-			POLL_INTERVAL = cmd.data['interval']
+			pollInterval = cmd.data['interval']
+			iotfAddon.setSetting('iotfinterval', pollInterval)
 	elif cmd.command == "pause":
 		xbmc.Player().pause()
 	elif cmd.command == "stop":
@@ -31,11 +30,14 @@ def commandProcessor(cmd):
 
 # Look up the device configuration
 iotfAddon = xbmcaddon.Addon()
+
 organization = iotfAddon.getSetting('iotforgid')
-deviceType = iotfAddon.getSetting('iotftypeid')
+deviceType = "kodi"
 deviceId = iotfAddon.getSetting('iotfdeviceid')
 authMethod = "token"
 authToken = iotfAddon.getSetting('iotfauthtoken')
+
+pollInterval = iotfAddon.getSetting('iotfinterval')
 
 
 fhFormatter = logging.Formatter('%(asctime)-25s %(name)-25s ' + ' %(levelname)-7s %(message)s')
@@ -106,11 +108,11 @@ while (not xbmc.abortRequested):
 			pass
 			
 		playerData['time'] = player.getTime()
-		playerData['totaltime'] = player.getTotalTime()
+		playerData['totalTime'] = player.getTotalTime()
 	
 	print(playerData)
 	success = deviceCli.publishEvent("player", "json", playerData, qos=0)
-	xbmc.sleep(POLL_INTERVAL)
+	xbmc.sleep(pollInterval * 1000)
 
 
 # We are shutting down, disconnect

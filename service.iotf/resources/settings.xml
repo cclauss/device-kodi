@@ -2,8 +2,8 @@
 <settings>
 	<category label="30000">
 		<setting id="iotforgid" type="text" label="35001" default=""/>
-		<setting id="iotftypeid" type="text" label="35002" default="kodi"/>
-		<setting id="iotfdeviceid" type="text" label="35003" default=""/>
-		<setting id="iotfauthtoken" type="text" label="35004" default="" option="hidden"/>
+		<setting id="iotfdeviceid" type="text" label="35002" default=""/>
+		<setting id="iotfauthtoken" type="text" label="35003" default="" option="hidden"/>
+		<setting id="iotfinterval" type="number" label="35004" default="10" />
 	</category>
 </settings>
