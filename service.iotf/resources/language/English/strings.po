@@ -1,0 +1,28 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: IoTF Kodi Addon\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: David Parker <parkerda@uk.ibm.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+"X-Generator: Poedit 1.6.11\n"
+
+msgctxt "#35001"
+msgid "Organization ID"
+msgstr ""
+
+msgctxt "#35002"
+msgid "Type ID"
+msgstr ""
+
+msgctxt "#35003"
+msgid "Device ID"
+msgstr ""
+
+msgctxt "#35004"
+msgid "Authentication Token"
+msgstr ""
