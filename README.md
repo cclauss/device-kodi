@@ -1,9 +1,9 @@
-# IoTF Device Client for Kodi
+# Watson IoT Device Client for Kodi
 
 ## Overview
 This addon for Kodi syncs your current activity into the IoT Foundation and supports remote control of your device:
 
-- [Internet of Things Foundation](https://internetofthings.ibmcloud.com)
+- [IBM Watson IoT](https://internetofthings.ibmcloud.com)
 - [Kodi](http://kodi.tv/)
 
 ## Events
@@ -43,11 +43,11 @@ If the media being played is a video any information from the tag will also be i
 Command control is currently veyr limited:
 
 ### setInterval
-This command can be used to alter the frequency at which the addon will poll Kodi and report the player state to IoTF.  Expects a payload containing the new polling interval (in seconds):
+This command can be used to alter the frequency at which the addon will poll Kodi and report the player state to Watson IoT.  Expects a payload containing the new polling interval (in seconds):
 
 ```json
 {
-  'interval': 60
+  "interval": 60
 }
 ```
 
